@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Registration System</title>
+
+  <!-- Meta description for accessibility and SEO -->
+  <meta name="description" content="A Student Registration System built with HTML, CSS, and JavaScript DOM manipulation. Add, edit, and delete student records with localStorage persistence." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- -------------------- Header -------------------- -->
+  <header>
+    <div class="container">
+      <div class="brand">
+        <h1>Student Registration System</h1>
+        <p class="tagline">Register, view, edit, and delete student records with ease.</p>
+      </div>
+
+      <nav class="nav">
+        <a href="#form-section">Register</a>
+        <a href="#display-section">View Records</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- -------------------- Main Content -------------------- -->
+  <main class="container">
+    <!-- ---------- Registration Form ---------- -->
+    <section id="form-section" class="card form-card">
+      <h2>Register Student</h2>
+
+      <form id="studentForm" novalidate>
+        <div class="form-row">
+          <label for="name">Student Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter full name" required />
+          <small class="error" id="nameError"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="studentId">Student ID</label>
+          <input type="text" id="studentId" name="studentId" placeholder="Enter numeric ID" required />
+          <small class="error" id="idError"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" name="email" placeholder="example@email.com" required />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-row">
+          <label for="contact">Contact Number</label>
+          <input type="tel" id="contact" name="contact" placeholder="Enter contact number" required />
+          <small class="error" id="contactError"></small>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary" id="submitBtn">Add Student</button>
+          <button type="reset" class="btn ghost">Reset</button>
+        </div>
+
+        <input type="hidden" id="editingIndex" value="-1" />
+      </form>
+    </section>
+
+    <!-- ---------- Display Section ---------- -->
+    <section id="display-section" class="card display-card">
+      <h2>Registered Students</h2>
+
+      <div id="tableWrapper" class="table-wrapper">
+        <table id="studentsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="studentsTbody">
+            <!-- Rows will be dynamically added here -->
+          </tbody>
+        </table>
+      </div>
+
+      <div class="display-footer">
+        <button id="clearAll" class="btn danger">Clear All</button>
+        <p class="note">All data is stored in your browser using localStorage.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- -------------------- Footer -------------------- -->
+  <footer>
+    <p>© 2025 Student Registration System | Built with HTML, CSS & JavaScript</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
