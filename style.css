@@ -1,0 +1,319 @@
+/* ---------------------------------------------------------
+   Student Registration System - styles.css
+--------------------------------------------------------- */
+
+:root {
+  --dark: #22223b;
+  --primary: #4a4e69;
+  --secondary: #9a8c98;
+  --accent: #c9ada7;
+  --light: #f2e9e4;
+
+  --radius: 12px;
+  --transition: 0.25s ease;
+  --shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, var(--dark) 0%, #2d2d4a 100%);
+  color: var(--light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+
+/* -------------------- Header -------------------- */
+header {
+  background: var(--primary);
+  padding: 18px 0;
+  box-shadow: var(--shadow);
+}
+
+header .container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: var(--light);
+  letter-spacing: 0.5px;
+}
+
+header .tagline {
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.nav a {
+  color: var(--light);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 14px;
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.nav a:hover {
+  background: var(--accent);
+  color: var(--dark);
+  transform: translateY(-2px);
+}
+
+/* -------------------- Main Layout -------------------- */
+main.container {
+  max-width: 1100px;
+  margin: 30px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding: 0 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  backdrop-filter: blur(6px);
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* -------------------- Form Section -------------------- */
+.form-card h2,
+.display-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 16px;
+  color: var(--accent);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 14px;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--light);
+}
+
+input {
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: var(--light);
+  outline: none;
+  transition: var(--transition);
+}
+
+input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(201, 173, 167, 0.4);
+  transform: translateY(-2px);
+}
+
+.error {
+  color: #ffb3b3;
+  font-size: 0.82rem;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+/* -------------------- Buttons -------------------- */
+.btn {
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: var(--light);
+}
+
+.btn.primary:hover {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--light);
+}
+
+.btn.ghost:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.btn.danger {
+  background: #a73636;
+  color: var(--light);
+}
+
+.btn.danger:hover {
+  background: #c04646;
+}
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* -------------------- Table Section -------------------- */
+.table-wrapper {
+  margin-top: 12px;
+  overflow-x: auto;
+  max-height: 360px;
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--light);
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+thead th {
+  background: rgba(255, 255, 255, 0.08);
+  position: sticky;
+  top: 0;
+  font-weight: 700;
+}
+
+tbody tr:hover {
+  background: rgba(255, 255, 255, 0.05);
+  transition: var(--transition);
+}
+
+.small-btn {
+  border: none;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  margin-right: 6px;
+  transition: var(--transition);
+}
+
+.small-edit {
+  background: var(--accent);
+  color: var(--dark);
+}
+
+.small-edit:hover {
+  background: var(--light);
+}
+
+.small-delete {
+  background: #9c3c3c;
+  color: var(--light);
+}
+
+.small-delete:hover {
+  background: #b64a4a;
+}
+
+.display-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.note {
+  color: var(--secondary);
+  font-size: 0.86rem;
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  text-align: center;
+  padding: 16px 0;
+  font-size: 0.9rem;
+  color: var(--secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: auto;
+}
+
+/* -------------------- Animations -------------------- */
+tr.enter-anim {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------- Responsive Design -------------------- */
+@media (max-width: 992px) {
+  main.container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  th, td {
+    padding: 10px;
+    font-size: 0.88rem;
+  }
+
+  .nav a {
+    margin: 6px 4px;
+    display: inline-block;
+  }
+}
+
+
